@@ -32,7 +32,7 @@ response = f"Echo: {prompt}"
 with st.chat_message("assistant"):
     st.markdown(response)
 # Add assistant response to chat history
-st.session_state.messages.append({"role": "assistant", "content": response}
+st.session_state.messages.append({"role": "assistant", "content": response})
 
 if prompt:
     prediction = hate_speech_detection(prompt)
