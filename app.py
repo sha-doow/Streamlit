@@ -15,6 +15,6 @@ st.title("Hate Speech Detection")
 user_input = st.text_area("Enter a Tweet:")
 
 if user_input:
-    prediction = hate_speech_detection(user_input)
+    st.chat_input(prediction = hate_speech_detection(user_input))
     message = st.chat_message("assistant")
-    message.write(f"Prediction: {prediction}")
+    st.chat_input(f"Prediction: {prediction}")
