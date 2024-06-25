@@ -15,6 +15,6 @@ prompt = st.chat_input(placeholder="Enter Your Tweet", key=None, max_chars=None,
 
 if prompt:
     prediction = hate_speech_detection(prompt)
-    st.chat_input(f"Prediction: {prediction}")
+    st.write(f"Prediction: {prediction}")
     
     
