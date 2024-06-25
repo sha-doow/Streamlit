@@ -1,6 +1,5 @@
 import streamlit as st
 from joblib import load
-import numpy as np
 
 # Load the model and vectorizer
 clf = load('hate_speech_model.pkl')
@@ -15,6 +14,10 @@ st.title("Hate Speech Detection")
 user_input = st.text_area("Enter a Tweet:")
 
 if user_input:
+    prediction = hate_speech_detection(user_input)
+    st.chat_input(f"Prediction: {prediction}")
+    
+if user_input:
     st.chat_input(prediction = hate_speech_detection(user_input))
     message = st.chat_message("assistant")
-    st.chat_input(f"Prediction: {prediction}")
+    
