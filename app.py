@@ -11,9 +11,9 @@ def hate_speech_detection(tweet):
     return prediction[0]
 
 st.title("Hate Speech Detection")
-st.chat_input(placeholder="Enter Your Tweet", key=None, max_chars=None, disabled=False, on_submit=None, args=None, kwargs=None)
+prompt = st.chat_input(placeholder="Enter Your Tweet", key=None, max_chars=None, disabled=False, on_submit=None, args=None, kwargs=None)
 
-if user_input:
+if prompt:
     prediction = hate_speech_detection(user_input)
     st.chat_input(f"Prediction: {prediction}")
     
