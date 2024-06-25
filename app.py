@@ -11,7 +11,7 @@ def hate_speech_detection(tweet):
     return prediction[0]
 
 st.title("Hate Speech Detection")
-prompt := st.chat_input("Enter Your Tweet"):
+prompt = st.chat_input("Enter Your Tweet"):
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
