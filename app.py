@@ -11,10 +11,10 @@ def hate_speech_detection(tweet):
     return prediction[0]
 
 st.title("Hate Speech Detection")
-user_input = st.text_area("Enter a Tweet:")
+message = st.chat_message(user_input = st.text_area("Enter a Tweet:"))
 
 if user_input:
-    message = st.chat_message(prediction = hate_speech_detection(user_input))
+    prediction = hate_speech_detection(user_input)
     st.chat_input(f"Prediction: {prediction}")
     
     
