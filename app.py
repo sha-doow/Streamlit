@@ -15,4 +15,4 @@ user_input = st.text_area("Enter a Tweet:")
 
 if user_input:
     prediction = hate_speech_detection(user_input)
-    st.write(f"Prediction: {prediction}")
+    message.write(f"Prediction: {prediction}")
