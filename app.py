@@ -25,7 +25,7 @@ user_input = st.text_input("You:", key="user_input")
 if st.button("Send") and user_input:
     prediction = hate_speech_detection(user_input)
     add_to_chat_history(user_input, prediction)
-    st.session_state.user_input = ""  # Clear input box after sending
+    st.session_state.user_input = "No"  # Clear input box after sending
 
 # Display chat history
 for chat in st.session_state.chat_history:
