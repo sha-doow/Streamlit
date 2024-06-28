@@ -22,9 +22,7 @@ def add_to_chat_history(user_input, prediction):
 # User input
 user_input = st.text_input("Enter Tweet", key="user_input")
 
-if st.button("") and user_input:
-    prediction = hate_speech_detection(user_input)
-    add_to_chat_history(user_input, prediction)
+
     
 # Display chat history in chat format
 st.markdown(
@@ -49,5 +47,5 @@ st.markdown(
 )
 
 for chat in st.session_state.chat_history:
-    st.markdown(f"<div class='user-message'>User: {chat['user']}</div>", unsafe_allow_html=True)
-    st.markdown(f"<div class='bot-response'>Responds: {chat['prediction']}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='user-message'> {chat['user']}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='bot-response'> {chat['prediction']}</div>", unsafe_allow_html=True)
