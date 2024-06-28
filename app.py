@@ -22,7 +22,9 @@ def add_to_chat_history(user_input, prediction):
 # User input
 user_input = st.text_input("Enter Tweet", key="user_input")
 
-
+if  user_input:
+    prediction = hate_speech_detection(user_input)
+    add_to_chat_history(user_input, prediction)
     
 # Display chat history in chat format
 st.markdown(
