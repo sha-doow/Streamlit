@@ -10,7 +10,7 @@ def hate_speech_detection(tweet):
     prediction = clf.predict(data)
     return prediction[0]
 
-st.title("Hate Speech Detection Chatbot")
+st.title("Shadow's Hate Speech Detection Chatbot")
 
 # Initialize the session state for chat history
 if "chat_history" not in st.session_state:
@@ -20,9 +20,9 @@ def add_to_chat_history(user_input, prediction):
     st.session_state.chat_history.append({"user": user_input, "prediction": prediction})
 
 # User input
-user_input = st.text_input("You:", key="user_input")
+user_input = st.text_input("Enter Tweet", key="user_input")
 
-if st.button("Send") and user_input:
+if st.button("") and user_input:
     prediction = hate_speech_detection(user_input)
     add_to_chat_history(user_input, prediction)
     
@@ -31,14 +31,14 @@ st.markdown(
     """
     <style>
     .user-message {
-        background-color: #DCF8C6;
+        background-color: #000000;
         padding: 10px;
         border-radius: 10px;
         text-align: right;
         margin-bottom: 5px;
     }
     .bot-response {
-        background-color: #ECE5DD;
+        background-color: #023020;
         padding: 10px;
         border-radius: 10px;
         text-align: left;
@@ -49,5 +49,5 @@ st.markdown(
 )
 
 for chat in st.session_state.chat_history:
-    st.markdown(f"<div class='user-message'>**You:** {chat['user']}</div>", unsafe_allow_html=True)
-    st.markdown(f"<div class='bot-response'>**Prediction:** {chat['prediction']}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='user-message'>User: {chat['user']}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='bot-response'>Responds: {chat['prediction']}</div>", unsafe_allow_html=True)
